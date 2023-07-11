@@ -1,11 +1,12 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {View, StyleSheet, Text, useWindowDimensions} from 'react-native'
 import {TabView, SceneMap } from 'react-native-tab-view';
 //import {} from 'react-native-web'
+import FlatListChat from './FlatListChat';
 
 const ChatScreen = () => (
-    <View style={Styles.screenContainer} >
+    <View style={styles.screenContainer} >
         <FlatListChat />
     </View>
 
@@ -26,7 +27,14 @@ const renderScene = SceneMap({
     second: StatusScreen,
     third: CallsScreen,
 });
-const layout = useWindowDimensions();
+
+
+const styles = StyleSheet.create({
+    
+})
+
+const ZappTabView = () => {
+    const layout = useWindowDimensions();
 
 const [index, setIndex] =useState(0);
 const [routes] = React.useState([
@@ -36,11 +44,6 @@ const [routes] = React.useState([
 
 ]);
 
-const styles = StyleSheet.create({
-    
-})
-
-const ZappTabView = () => {
     return(
         <TabView
         navigationState={{ index, routes }}
