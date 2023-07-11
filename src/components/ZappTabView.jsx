@@ -57,7 +57,7 @@ const ZappTabView = () => {
         tabBarOptions={{
             style: { backgroundColor: 'red' },
           }}
-          renderTabBar={props => <TabBar {...props} style={{backgroundColor: '#075e54'}}/>}
+          renderTabBar={props => <TabBar {...props} bounces="true" style={{backgroundColor: '#075e54'}}/>}
     />
     )
     
