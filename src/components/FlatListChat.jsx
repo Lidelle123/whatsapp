@@ -27,8 +27,8 @@ const FlatListChat = () => {
                 <View style={{ flex: 1 }}>
                     <Text style={flatListStyles.name}>{item.name}</Text>
                     <Text style={flatListStyles.message}>{item.message}</Text>
-                </View>
-                {item.isNewMessage && <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: 'green' }} />}
+                </View>{item.isNewMessage && <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: 'green' }} />}
+                
             </View>
             
         )}

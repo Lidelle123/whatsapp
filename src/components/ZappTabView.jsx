@@ -4,6 +4,8 @@ import {View, StyleSheet, Text, useWindowDimensions} from 'react-native'
 import {TabView, TabBar, SceneMap } from 'react-native-tab-view';
 //import {} from 'react-native-web'
 import FlatListChat from './FlatListChat';
+import FlatListCall from './FlatListCall';
+import FlatListStatus from './FlatListStatus';
 
 const ChatScreen = () => (
     <View style={styles.screenContainer} >
@@ -13,12 +15,12 @@ const ChatScreen = () => (
 );
 const StatusScreen = () => (
     <View style={styles.screenContainer}>
-        <Text>Status</Text>
+        <FlatListStatus />
     </View>
 );
 const CallsScreen = () => (
     <View style={styles.screenContainer}>
-        <Text>Calls</Text>
+        <FlatListCall />
     </View>
 );
 
@@ -36,13 +38,13 @@ const styles = StyleSheet.create({
 const ZappTabView = () => {
     const layout = useWindowDimensions();
 
-const [index, setIndex] =useState(0);
-const [routes] = React.useState([
-    {key: 'first', title: 'chats'},
-    {key: 'second', title: 'status'},
-    {key: 'third', title: 'status' },
+    const [index, setIndex] =useState(0);
+    const [routes] = React.useState([
+        {key: 'first', title: 'Chats'},
+        {key: 'second', title: 'Status'},
+        {key: 'third', title: 'Calls' },
 
-]);
+    ]);
 
     return(
         <TabView
