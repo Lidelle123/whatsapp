@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import {View, StyleSheet, Text, useWindowDimensions} from 'react-native'
-import {TabView, SceneMap } from 'react-native-tab-view';
+import {TabView, TabBar, SceneMap } from 'react-native-tab-view';
 //import {} from 'react-native-web'
 import FlatListChat from './FlatListChat';
 
@@ -50,6 +50,12 @@ const [routes] = React.useState([
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        style = {{ }}
+        tabBarStyle={{ backgroundColor: 'red' }}
+        tabBarOptions={{
+            style: { backgroundColor: 'red' },
+          }}
+          renderTabBar={props => <TabBar {...props} style={{backgroundColor: '#075e54'}}/>}
     />
     )
     
