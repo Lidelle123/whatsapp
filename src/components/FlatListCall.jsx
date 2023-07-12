@@ -1,5 +1,5 @@
 import {View, FlatList, Text, StyleSheet, Image} from 'react-native'
-import {Ionicons} from '@expo/vector-icons';
+import {Ionicons, AntDesign} from '@expo/vector-icons';
 
 
 const FlatListCall = () => {
@@ -33,10 +33,11 @@ const FlatListCall = () => {
                     </View>
                     </View>
                     {item.isVideo ? (
-                    <Ionicons name="call-outline" size={16} color="#25D366" style={styles.icon} />
+                    <Ionicons name="call" size={16} color="#25D366" style={styles.icon} />
                   ) : (
-                    <Ionicons name="videocam-outline" size={16} color="#25D366" style={styles.icon} />
+                    <Ionicons name="videocam" size={16} color="#25D366" style={styles.icon} />
                   )}
+
                   
                 </View>
               )}
