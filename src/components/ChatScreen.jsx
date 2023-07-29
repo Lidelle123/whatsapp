@@ -1,16 +1,15 @@
-
 import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const ChatScreen = ({ navigation, route }) => {
   const { name, messages } = route.params;
 
   return (
-    
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons name="arrow-back" size={24} color="white" />
+          <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
         <View style={styles.headerContent}>
           <Image source={require('../images/john.png')} style={styles.headerImage} />
@@ -18,25 +17,27 @@ const ChatScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.headerIcons}>
           <TouchableOpacity>
-          <Ionicons name="videocam" size={16} color="white" style={styles.headerIcon} />
+            <Ionicons name="videocam" size={16} color="white" style={styles.headerIcon} />
           </TouchableOpacity>
           <TouchableOpacity>
-          <Ionicons name="call" size={16} color="white" style={styles.headerIcon} />
+            <Ionicons name="call" size={16} color="white" style={styles.headerIcon} />
           </TouchableOpacity>
           <TouchableOpacity>
-          <Ionicons name="menu" color="white" style={styles.headerIcon} />
+            <Ionicons name="menu" color="white" style={styles.headerIcon} />
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.messageContainer}>
+      <ScrollView contentContainerStyle={styles.messageContainer}>
         {messages && messages.map((message, index) => (
-          <View key={index} style={styles.messageItem}>
+          <View key={index} style={[
+            styles.messageItem,
+            message.isReceived ? styles.receivedMessage : styles.sentMessage,
+          ]}>
             <Text>{message.text}</Text>
           </View>
         ))}
-      </View>
+      </ScrollView>
     </View>
-    
   );
 };
 
@@ -71,8 +72,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   headerName: {
-    //fontWeight: 'bold',
-    color:'white',
+    // fontWeight: 'bold',
+    color: 'white',
     fontSize: 18,
   },
   headerIcons: {
@@ -85,16 +86,22 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   messageContainer: {
-    flex: 1,
     padding: 15,
   },
   messageItem: {
     marginBottom: 10,
     padding: 10,
-    backgroundColor: '#f2f2f2',
     borderRadius: 10,
+    maxWidth: '70%',
+  },
+  sentMessage: {
+    alignSelf: 'flex-end',
+    backgroundColor: '#DCF8C6',
+  },
+  receivedMessage: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#ECE5DD',
   },
 });
 
 export default ChatScreen;
-
