@@ -2,6 +2,17 @@ import { View, FlatList, StyleSheet, Text, Image } from "react-native-web"
 
 
 const FlatListStatus = () =>{
+    const renderImageBorder = (nbr) => {
+        const borderStyle = nbr > 1 ? "dashed" : "solid";
+        //const borderWidth = nbr > 1 ? 2 / nbr : 2;
+    
+        return {
+          
+          borderStyle,
+          borderColor: "green",
+        };
+      };
+
     return(
         <FlatList
             data = {[
@@ -11,13 +22,16 @@ const FlatListStatus = () =>{
 
             renderItem={({ item }) => (
                 <View style={styles.itemsContainer}>
-                  <Image source={item.image} style={styles.image} />
-                    <View style={styles.textContainer}>
+                  <Image
+                    source={item.image}
+                    style={[styles.image, renderImageBorder(item.nbr)]}
+                  />
+                  <View style={styles.textContainer}>
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={styles.date}>{item.date}</Text>
-                    </View>
+                  </View>
                 </View>
-                    )}
+              )}
         />
     )
 }
@@ -33,6 +47,8 @@ const styles= StyleSheet.create({
         height: 50,
         borderRadius: 25,
         marginRight: 5,
+        borderWidth: 2,
+        borderColor: 'green',
     },
     name:{
         fontWeight: 'bold'

@@ -6,8 +6,10 @@ import {TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import FlatListChat from './FlatListChat';
 import FlatListCall from './FlatListCall';
 import FlatListStatus from './FlatListStatus';
+import Header from "./Header.jsx";
 
 const ChatScreen = () => (
+    
     <View style={styles.screenContainer} >
         <FlatListChat />
     </View>
@@ -47,6 +49,8 @@ const ZappTabView = () => {
     ]);
 
     return(
+        <>
+        <Header/>
         <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -59,6 +63,7 @@ const ZappTabView = () => {
           }}
           renderTabBar={props => <TabBar {...props} bounces="true" style={{backgroundColor: '#075e54'}}/>}
     />
+    </>
     )
     
 };
