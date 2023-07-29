@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, StatusBar, TouchableWithoutFeedback, Modal} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import WhatsAppMenu from './components/WhatsappMenu'; // Assuming WhatsAppMenu.js is the filename for the WhatsAppMenu component
+import WhatsAppMenu from './WhatsappMenu'; // Assuming WhatsAppMenu.js is the filename for the WhatsAppMenu component
 
 const Header = () => {
   const [isMenuVisible, setMenuVisible] = useState(false);
@@ -23,19 +23,29 @@ const Header = () => {
       </View>
       <View style={headerStyles.headerIcons}>
         <TouchableOpacity onPress={() => {/* Action to execute */}}>
-          <Ionicons name="camera" style={[headerStyles.icon, { marginRight: 15 }]} />
+          <Ionicons name="camera" style={[headerStyles.headerIcons, { marginRight: 15 }]} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {/* Action to execute */}}>
-          <Ionicons name="search" style={[headerStyles.icon, { marginRight: 15 }]} />
+          <Ionicons name="search" style={[headerStyles.headerIcons, { marginRight: 15 }]} />
         </TouchableOpacity>
         <TouchableOpacity onPress={handleMenuClick}>
-          <Ionicons name="menu" style={[headerStyles.icon, { marginRight: 15 }]} />
+          <Ionicons name="menu" style={[headerStyles.headerIcons, { marginRight: 15 }]} />
         </TouchableOpacity>
       </View>
       {/* WhatsAppMenu container */}
-      <View style={headerStyles.menuContainer}>
-        <WhatsAppMenu isVisible={isMenuVisible} onOptionPress={handleOptionPress} />
-      </View>
+      
+      <Modal
+        transparent
+        visible={isMenuVisible}
+        onRequestClose={() => setMenuVisible(false)}
+      >
+        <TouchableWithoutFeedback onPress={() => setMenuVisible(false)}>
+          <View style={modalStyles.modalView} />
+        </TouchableWithoutFeedback>
+        <View style={headerStyles.menuContainer}>
+          <WhatsAppMenu isVisible={isMenuVisible} onOptionPress={handleOptionPress} />
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -70,5 +80,15 @@ const headerStyles = StyleSheet.create({
       },
 
 })
+
+const modalStyles = StyleSheet.create({
+    modalView: {
+      flex: 1,
+      
+    },
+   
+   
+  });
+  
 
 export default Header;

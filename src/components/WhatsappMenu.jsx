@@ -18,15 +18,15 @@ const WhatsAppMenu = ({ isVisible, onOptionPress }) => {
       <TouchableOpacity onPress={() => handleOptionPress('New Broadcast')}>
         <Text style={styles.optionText}>New Broadcast</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleOptionPress('WhatsApp Web')}>
-        <Text style={styles.optionText}>WhatsApp Web</Text>
+      <TouchableOpacity onPress={() => handleOptionPress('Linked devices')}>
+        <Text style={styles.optionText}>Linked devices</Text>
       </TouchableOpacity>
       {/* Add more TouchableOpacity components for additional menu options */}
       <TouchableOpacity onPress={() => handleOptionPress('Starred Messages')}>
         <Text style={styles.optionText}>Starred Messages</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleOptionPress('Payments')}>
-        <Text style={styles.optionText}>Payments</Text>
+      <TouchableOpacity onPress={() => handleOptionPress('Settings')}>
+        <Text style={styles.optionText}>Settings</Text>
       </TouchableOpacity>
       {/* Add more options as needed */}
     </View>
