@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import {View, StyleSheet, Text, useWindowDimensions} from 'react-native'
+import {View, StyleSheet, Text, useWindowDimensions, ScrollView} from 'react-native'
 import {TabView, TabBar, SceneMap } from 'react-native-tab-view';
 //import {} from 'react-native-web'
 import FlatListChat from './FlatListChat';
@@ -51,6 +51,7 @@ const ZappTabView = () => {
     return(
         <>
         <Header/>
+        <ScrollView>
         <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -63,6 +64,7 @@ const ZappTabView = () => {
           }}
           renderTabBar={props => <TabBar {...props} bounces="true" style={{backgroundColor: '#075e54'}}/>}
     />
+    </ScrollView>
     </>
     )
     

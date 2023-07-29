@@ -1,6 +1,6 @@
 
 import React from "react";
-import {StyleSheet, FlatList, View, Text, Image, TouchableOpacity} from 'react-native'
+import {StyleSheet, FlatList, View, Text, Image, TouchableOpacity, ScrollView} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -32,8 +32,7 @@ const FlatListChat = () => {
 
           return (
             <>
-            
-            
+          
             <FlatList
               data={data}
 

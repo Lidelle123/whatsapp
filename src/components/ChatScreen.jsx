@@ -1,11 +1,12 @@
 
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const ChatScreen = ({ navigation, route }) => {
   const { name, messages } = route.params;
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -35,6 +36,7 @@ const ChatScreen = ({ navigation, route }) => {
         ))}
       </View>
     </View>
+    
   );
 };
 
