@@ -1,10 +1,11 @@
 //import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,View } from "react-native";
+import { StatusBar, StyleSheet,View } from "react-native";
 import Interface from "./src/components/Interface.jsx";
 
 const App = () => {
   return(
     <View style={styles.container}>
+      <StatusBar style="auto"/>
       <Interface/>
     </View>
   );

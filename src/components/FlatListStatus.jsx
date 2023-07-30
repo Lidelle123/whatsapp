@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet, Text, Image } from "react-native-web"
+import { View, FlatList, StyleSheet, Text, Image } from "react-native"
 
 
 const FlatListStatus = () =>{

@@ -51,7 +51,7 @@ const ZappTabView = () => {
     return(
         <>
         <Header/>
-        <ScrollView>
+     
         <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
@@ -64,7 +64,7 @@ const ZappTabView = () => {
           }}
           renderTabBar={props => <TabBar {...props} bounces="true" style={{backgroundColor: '#075e54'}}/>}
     />
-    </ScrollView>
+ 
     </>
     )
     
