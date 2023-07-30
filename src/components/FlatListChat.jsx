@@ -63,7 +63,7 @@ const FlatListChat = () => {
           };
 
           return (
-            <>
+  
           
             <FlatList
               data={data}
@@ -85,7 +85,7 @@ const FlatListChat = () => {
         
 
     />
-    </>
+  
     )
     
 }; 

@@ -63,7 +63,7 @@ const headerStyles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 'auto',
-        fontSize: '20px',
+        fontSize: 20,
         color: 'white',
         marginHorizontal: 5,
     },
@@ -74,7 +74,7 @@ const headerStyles = StyleSheet.create({
     },
     menuContainer: {
         position: 'absolute',
-        top: StatusBar.currentHeight + 56, // Add the header height plus status bar height
+        top:StatusBar.currentHeight-70, // Add the header height plus status bar height
         right: 0,
         width:200
       },
